@@ -5,6 +5,6 @@ import '../index.css'
 
 <Navbar />
 
-<main class="p-2">
+<main class="p-4">
   <slot />
 </main>
