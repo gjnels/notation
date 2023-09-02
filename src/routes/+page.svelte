@@ -1,6 +1,7 @@
 <script lang="ts">
 import NoteForm from '$lib/components/NoteForm.svelte'
 import { notes, noteToUpdate } from '$lib/stores/notesStore'
+import { onMount } from 'svelte'
 
 function handleEditNote(id: string) {
   $noteToUpdate = $notes.find((note) => note.id === id)
@@ -10,6 +11,10 @@ function handleDeleteNote(id: string) {
   notes.deleteNote(id)
   if ($noteToUpdate?.id === id) $noteToUpdate = undefined
 }
+
+onMount(function () {
+  notes.loadNotes()
+})
 </script>
 
 <div class="flex gap-8">
