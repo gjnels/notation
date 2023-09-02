@@ -1,14 +1,10 @@
 <script lang="ts">
 import { notes } from '$lib/stores/notesStore'
+import NoteItem from './NoteItem.svelte'
 </script>
 
-<ul class="space-y-3">
+<ul class="grid grid-cols-[repeat(auto-fill,_minmax(15rem,_1fr))] gap-4">
   {#each $notes as note (note.id)}
-    <li>
-      <a href="/edit?id={note.id}">
-        <p class="text-lg font-medium">{note.title}</p>
-        <p class="text-sm opacity-70">{note.updatedAt.toLocaleDateString()}</p>
-      </a>
-    </li>
+    <NoteItem note={note} />
   {/each}
 </ul>
