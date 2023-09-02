@@ -1,7 +1,10 @@
 <script lang="ts">
+import Navbar from '$lib/components/Navbar.svelte'
 import '../index.css'
 </script>
 
-<main class="container mx-auto px-2 py-4">
+<Navbar />
+
+<main class="p-2">
   <slot />
 </main>
