@@ -10,9 +10,22 @@ export let classes = ''
 export let title = ''
 export let body = ''
 export let id = ''
+let error = ''
+
+const MAX_TITLE_LENGTH = 80
 
 function handleSubmit() {
-  if (!title) return
+  if (!title) {
+    error = 'Title is required'
+    return
+  }
+
+  if (title.length > MAX_TITLE_LENGTH) {
+    error = `Title cannot be longer than ${MAX_TITLE_LENGTH} characters`
+    return
+  }
+
+  error = ''
 
   const note = { title, body, id: id || crypto.randomUUID() }
   id ? notes.updateNote(note) : notes.createNote(note)
@@ -29,7 +42,7 @@ function handleDeleteNote(id: string) {
   on:submit|preventDefault={handleSubmit}
   class={twMerge("flex max-w-xl flex-col gap-4", classes)}
 >
-  <TextInput placeholder="Title" bind:value={title} />
+  <TextInput placeholder="Title" bind:value={title} error={error} />
   <TextArea rows={5} placeholder="Body" bind:value={body} />
   <button
     type="submit"
