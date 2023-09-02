@@ -1,6 +1,6 @@
 import { browser } from '$app/environment'
-import { useLocalStorage } from '$lib/localStorage'
 import { derived, get, writable } from 'svelte/store'
+import { useLocalStorage } from '$lib/localStorage'
 
 const noteStorage = useLocalStorage('notes')
 
