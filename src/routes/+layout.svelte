@@ -1,5 +1,7 @@
 <script lang="ts">
-  import '../index.css'
+import '../index.css'
 </script>
 
-<slot />
+<main class="container mx-auto px-2 py-4">
+  <slot />
+</main>
