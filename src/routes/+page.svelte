@@ -1,45 +1,21 @@
 <script lang="ts">
-import NoteForm from '$lib/components/NoteForm.svelte'
-import { notes, noteToUpdate } from '$lib/stores/notesStore'
-
-function handleEditNote(id: string) {
-  $noteToUpdate = $notes.find((note) => note.id === id)
-}
-
-function handleDeleteNote(id: string) {
-  notes.deleteNote(id)
-  if ($noteToUpdate?.id === id) $noteToUpdate = undefined
-}
+import { notes } from '$lib/stores/notesStore'
 </script>
 
-<div class="flex gap-8">
-  {#if $notes.length}
-    <ul>
-      {#each $notes as note (note.id)}
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-        <li class="flex items-center gap-4" on:click|preventDefault={() => handleEditNote(note.id)}>
-          <h3>{note.title}</h3>
-          <button
-            on:click|preventDefault={() => handleDeleteNote(note.id)}
-            class="flex h-4 w-4 items-center justify-center rounded-full bg-slate-700 text-slate-50 outline-none dark:bg-slate-300 dark:text-slate-900"
-            ><span>&times;</span></button
-          >
-        </li>
-      {/each}
-    </ul>
-  {:else}
-    <p class="opacity-75">No notes found, add one now!</p>
-  {/if}
+<a
+  href="/create"
+  class="mb-4 inline-block rounded bg-orange-400 px-3 py-1.5 text-sm font-semibold text-black outline-none transition hover:brightness-110 dark:bg-orange-500 dark:text-white"
+  >New Note</a
+>
 
-  {#if $noteToUpdate}
-    <NoteForm
-      id={$noteToUpdate.id}
-      title={$noteToUpdate.title}
-      body={$noteToUpdate.body}
-      classes="grow"
-    />
-  {:else}
-    <NoteForm classes="grow" />
-  {/if}
-</div>
+<ul class="max-w-[200px] space-y-2">
+  {#each $notes as note (note.id)}
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+    <li>
+      <a href="/edit?id={note.id}">
+        <span class="font-semibold">{note.title}</span>
+      </a>
+    </li>
+  {/each}
+</ul>

@@ -1,6 +1,8 @@
 <script lang="ts">
 import { twMerge } from 'tailwind-merge'
 import { noteToUpdate, notes } from '$lib/stores/notesStore'
+import { redirect } from '@sveltejs/kit'
+import { goto } from '$app/navigation'
 
 export let classes = ''
 
@@ -20,7 +22,7 @@ function handleSubmit() {
 
   const note = { title, body, id: id || crypto.randomUUID() }
   id ? notes.updateNote(note) : notes.createNote(note)
-  handleResetForm()
+  goto('/')
 }
 </script>
 

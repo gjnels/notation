@@ -1,6 +1,6 @@
 import { browser } from '$app/environment'
 import { useLocalStorage } from '$lib/localStorage'
-import { derived, writable } from 'svelte/store'
+import { derived, get, writable } from 'svelte/store'
 
 const noteStorage = useLocalStorage('notes')
 
@@ -44,8 +44,12 @@ function updateNote(updatedNote: Note) {
   })
 }
 
+function findNote(id: string) {
+  return get(notes).find((note) => note.id === id)
+}
+
 const { subscribe } = derived(store, ($notes) => $notes)
 
-export const notes = { subscribe, createNote, deleteNote, updateNote, loadNotes }
+export const notes = { subscribe, createNote, deleteNote, updateNote, findNote, loadNotes }
 
 export const noteToUpdate = writable<Note | undefined>(undefined)
