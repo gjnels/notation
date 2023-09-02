@@ -1,8 +1,9 @@
-export function useLocalStorage(key: string) {
+export function useLocalStorage<T>(key: string) {
   if (!key) throw new Error('localStorage key not provided')
 
   function load() {
-    return JSON.parse(localStorage.getItem(key) || '')
+    const storedData = localStorage.getItem(key)
+    return storedData ? (JSON.parse(storedData) as T) : undefined
   }
 
   function save(data: unknown) {

@@ -8,13 +8,12 @@ import { notes } from '$lib/stores/notesStore'
   >New Note</a
 >
 
-<ul class="max-w-[200px] space-y-2">
+<ul class="space-y-3">
   {#each $notes as note (note.id)}
-    <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
     <li>
       <a href="/edit?id={note.id}">
-        <span class="font-semibold">{note.title}</span>
+        <p class="text-lg font-medium">{note.title}</p>
+        <p class="text-sm opacity-70">{note.updatedAt.toLocaleDateString()}</p>
       </a>
     </li>
   {/each}
