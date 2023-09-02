@@ -2,6 +2,8 @@
 import { twMerge } from 'tailwind-merge'
 import { goto } from '$app/navigation'
 import { notes } from '$lib/stores/notesStore'
+import TextInput from './TextInput.svelte'
+import TextArea from './TextArea.svelte'
 
 export let classes = ''
 
@@ -25,20 +27,10 @@ function handleDeleteNote(id: string) {
 
 <form
   on:submit|preventDefault={handleSubmit}
-  class={twMerge("flex max-w-xl flex-col gap-2", classes)}
+  class={twMerge("flex max-w-xl flex-col gap-4", classes)}
 >
-  <input
-    type="text"
-    placeholder="Title"
-    bind:value={title}
-    class="rounded border-2 border-slate-400 bg-slate-50 p-2 outline-none transition focus-visible:border-slate-900 dark:border-slate-500 dark:bg-slate-800 dark:focus-visible:border-slate-50"
-  />
-  <textarea
-    rows={5}
-    placeholder="Body"
-    bind:value={body}
-    class="rounded border-2 border-slate-400 bg-slate-50 p-2 outline-none transition focus-visible:border-slate-900 dark:border-slate-500 dark:bg-slate-800 dark:focus-visible:border-slate-50"
-  />
+  <TextInput placeholder="Title" bind:value={title} />
+  <TextArea rows={5} placeholder="Body" bind:value={body} />
   <button
     type="submit"
     class="rounded bg-orange-400 px-3 py-1.5 font-semibold outline-none transition hover:brightness-110 dark:bg-orange-500"
