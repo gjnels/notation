@@ -14,6 +14,8 @@ export interface Note {
 
 const store = writable<Note[]>([])
 
+const notesLoadingStore = writable(true)
+
 function loadNotes() {
   if (browser) {
     const notes = noteStorage.load()?.map((note) => ({
@@ -22,6 +24,7 @@ function loadNotes() {
       updatedAt: new Date(note.updatedAt)
     }))
     store.set(notes || [])
+    notesLoadingStore.set(false)
   }
 }
 
@@ -59,6 +62,8 @@ function findNote(id: string) {
 const { subscribe } = derived(store, ($notes) => $notes)
 
 export const notes = { subscribe, createNote, deleteNote, updateNote, findNote, loadNotes }
+
+export const notesLoading = derived(notesLoadingStore, ($loading) => $loading)
 
 export const searchQuery = writable('')
 export const filteredNotes = derived([store, searchQuery], ([$notes, $query]) =>
