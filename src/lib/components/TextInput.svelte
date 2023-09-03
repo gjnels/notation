@@ -12,7 +12,7 @@ export let error = ''
   type="text"
   placeholder={placeholder}
   bind:value={value}
-  class={twMerge("rounded border-2 border-slate-400 bg-slate-50 p-2 outline-none transition focus-visible:border-orange-500 dark:border-slate-500 dark:bg-slate-800 dark:focus-visible:border-orange-400", classes)}
+  class={twMerge("focus-visible:border-primary-500 dark:focus-visible:border-primary-400 rounded border-2 border-slate-400 bg-slate-50 p-2 outline-none transition dark:border-slate-500 dark:bg-slate-800", classes)}
 />
 
 <FormError bind:error={error} />

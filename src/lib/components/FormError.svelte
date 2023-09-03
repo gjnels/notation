@@ -3,5 +3,5 @@ export let error = ''
 </script>
 
 {#if error}
-  <p class="text-red-500 dark:text-red-400">{error}</p>
+  <p class="text-danger-500 dark:text-danger-400">{error}</p>
 {/if}

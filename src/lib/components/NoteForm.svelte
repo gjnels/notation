@@ -46,13 +46,13 @@ function handleDeleteNote(id: string) {
   <TextArea rows={5} placeholder="Body" bind:value={body} />
   <button
     type="submit"
-    class="rounded bg-orange-400 px-3 py-1.5 font-semibold outline-none transition hover:brightness-110 dark:bg-orange-500"
+    class="bg-primary-400 dark:bg-primary-500 rounded px-3 py-1.5 font-semibold outline-none transition hover:brightness-110"
     >{id ? 'Update' : 'Create'} Note</button
   >
   {#if id}
     <button
       on:click={() => handleDeleteNote(id)}
-      class="mt-4 rounded bg-red-400 px-3 py-1.5 text-sm font-semibold outline-none hover:brightness-110 dark:bg-red-500"
+      class="bg-danger-400 dark:bg-danger-500 mt-4 rounded px-3 py-1.5 text-sm font-semibold outline-none hover:brightness-110"
       >Delete Note</button
     >
   {/if}

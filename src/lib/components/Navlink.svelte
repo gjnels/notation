@@ -9,7 +9,7 @@ $: active = $page.url.pathname.includes(href)
 
 <a
   href={href}
-  class={twMerge('border-b-2 border-transparent py-0.5 text-sm font-medium outline-none hover:text-orange-500 focus-visible:text-orange-500 dark:hover:text-orange-400 dark:focus-visible:text-orange-400', active && 'border-orange-500 opacity-100')}
+  class={twMerge('hover:text-primary-500 focus-visible:text-primary-500 dark:hover:text-primary-400 dark:focus-visible:text-primary-400 border-b-2 border-transparent py-0.5 text-sm font-medium outline-none', active && 'border-primary-500 opacity-100')}
 >
   <slot />
 </a>

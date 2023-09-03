@@ -60,4 +60,12 @@ const { subscribe } = derived(store, ($notes) => $notes)
 
 export const notes = { subscribe, createNote, deleteNote, updateNote, findNote, loadNotes }
 
-export const noteToUpdate = writable<Note | undefined>(undefined)
+export const searchQuery = writable('')
+export const filteredNotes = derived([store, searchQuery], ([$notes, $query]) =>
+  $notes.filter((note) => {
+    const title = note.title.toLowerCase()
+    const body = note.body.toLowerCase()
+    const queryTerms = $query.trim().toLowerCase().split(' ')
+    return queryTerms.every((term) => title.includes(term) || body.includes(term))
+  })
+)
