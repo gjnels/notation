@@ -7,7 +7,8 @@ export default {
     extend: {
       colors: {
         primary: colors.emerald,
-        danger: colors.rose
+        danger: colors.rose,
+        surface: colors.slate
       }
     }
   },

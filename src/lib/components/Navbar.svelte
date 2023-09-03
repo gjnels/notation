@@ -3,7 +3,9 @@ import Logo from './Logo.svelte'
 import Navlink from './Navlink.svelte'
 </script>
 
-<header class="flex items-center justify-between gap-4 bg-slate-300 px-4 py-2 dark:bg-slate-700">
+<header
+  class="bg-surface-300 dark:bg-surface-700 flex items-center justify-between gap-4 px-4 py-2"
+>
   <Logo />
   <nav>
     <Navlink href="/create">New Note</Navlink>
