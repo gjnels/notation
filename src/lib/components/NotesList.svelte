@@ -1,5 +1,5 @@
 <script lang="ts">
-import { filteredNotes, notesLoading } from '$lib/stores/notesStore'
+import { filteredNotes, notesLoading } from '$lib/stores/notes'
 import LoadingSpinner from './LoadingSpinner.svelte'
 import NoteItem from './NoteItem.svelte'
 </script>

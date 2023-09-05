@@ -1,5 +1,5 @@
 <script lang="ts">
-import type { Note } from '$lib/stores/notesStore'
+import type { Note } from '$lib/stores/notes'
 
 export let note: Note
 </script>

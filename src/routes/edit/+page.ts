@@ -1,6 +1,6 @@
 import { redirect } from '@sveltejs/kit'
 import type { PageLoad } from './$types'
-import { notes } from '$lib/stores/notesStore'
+import { notes } from '$lib/stores/notes'
 
 export const load: PageLoad = function ({ url: { searchParams } }) {
   const id = searchParams.get('id')

@@ -1,7 +1,7 @@
 <script lang="ts">
 import { twMerge } from 'tailwind-merge'
 import { goto } from '$app/navigation'
-import { notes } from '$lib/stores/notesStore'
+import { notes } from '$lib/stores/notes'
 import TextInput from './TextInput.svelte'
 import TextArea from './TextArea.svelte'
 
