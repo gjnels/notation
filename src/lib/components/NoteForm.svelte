@@ -42,7 +42,7 @@
 >
   <input type="text" placeholder="Title" bind:value={title} />
   {#if error}
-    <span class="text-rose-500">{error}</span>
+    <span class="text-danger-500">{error}</span>
   {/if}
   <textarea rows={5} placeholder="Body" bind:value={body} />
   <button

@@ -14,7 +14,7 @@
     <span>Email</span>
     <input type="email" name="email" bind:value={$form.email} required />
     {#if $errors.email}
-      <span class="text-rose-500">{$errors.email}</span>
+      <span class="text-danger-500">{$errors.email}</span>
     {/if}
   </label>
 
@@ -22,7 +22,7 @@
     <span>Password</span>
     <input type="password" name="password" bind:value={$form.password} required />
     {#if $errors.password}
-      <span class="text-rose-500">{$errors.password}</span>
+      <span class="text-danger-500">{$errors.password}</span>
     {/if}
   </label>
 
