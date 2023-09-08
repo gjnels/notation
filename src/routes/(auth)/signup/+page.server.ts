@@ -21,7 +21,7 @@ export const actions: Actions = {
 
     const { email, password } = form.data
 
-    const { error } = await supabase.auth.signUp({
+    const { error, data } = await supabase.auth.signUp({
       email,
       password
     })
@@ -30,6 +30,16 @@ export const actions: Actions = {
       return fail(500, { message: 'Server error. Try again later.', form })
     }
 
-    return message(form, 'Please check your inbox for a link to confirm your email address.')
+    if (data) {
+      return message(form, {
+        success: false,
+        message: 'An account already exists for this email address.'
+      })
+    }
+
+    return message(form, {
+      success: true,
+      message: 'Please check your inbox for a link to confirm your email address.'
+    })
   }
 }
