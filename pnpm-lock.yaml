@@ -11,6 +11,9 @@ dependencies:
   '@supabase/supabase-js':
     specifier: ^2.33.1
     version: 2.33.1
+  svelte-hero-icons:
+    specifier: ^5.0.0
+    version: 5.0.0
 
 devDependencies:
   '@sveltejs/adapter-auto':
@@ -377,6 +380,10 @@ packages:
 
   /@polka/url@1.0.0-next.23:
     resolution: {integrity: sha512-C16M+IYz0rgRhWZdCmK+h58JMv8vijAA61gmz2rspCSwKwzBebpdcsiUmwrtJRdphuY30i6BSLEOP8ppbNLyLg==}
+
+  /@steeze-ui/heroicons@2.2.3:
+    resolution: {integrity: sha512-bv4YK375U9TDS50SmJ5VdFy2UmMhgKbJCCbo6IUU3qs2luEj2VX6sQoDy96j8AIKttxMd62ih1j0lZj7CTjIfA==}
+    dev: false
 
   /@supabase/auth-helpers-shared@0.4.1(@supabase/supabase-js@2.33.1):
     resolution: {integrity: sha512-IEDX9JzWkIjQiLUaP4Qy5YDiG0jFQatWfS+jw8cCQs6QfbNdEPd2Y3qonwGHnM90CZom9SvjuylBv2pFVAL7Lw==}
@@ -2165,6 +2172,13 @@ packages:
       postcss-scss: 4.0.8(postcss@8.4.29)
       svelte: 4.2.0
     dev: true
+
+  /svelte-hero-icons@5.0.0:
+    resolution: {integrity: sha512-xKMI/Z0f/6831I0R1YKJjVbAw9VBD6XKysvng6LtomlS4n3ZD1lZNAfLrrCmnc1pmiLr/8sVeQA8kgHLQwYlRg==}
+    engines: {node: '>=14.0.0'}
+    dependencies:
+      '@steeze-ui/heroicons': 2.2.3
+    dev: false
 
   /svelte-hmr@0.15.3(svelte@4.2.0):
     resolution: {integrity: sha512-41snaPswvSf8TJUhlkoJBekRrABDXDMdpNpT2tfHIv4JuhgvHqLMhEPGtaQn0BmbNSTkuz2Ed20DF2eHw0SmBQ==}
