@@ -1,5 +1,5 @@
 <script lang="ts">
-export let error = ''
+  export let error = ''
 </script>
 
 {#if error}

@@ -1,6 +1,6 @@
 <script lang="ts">
-import Navbar from '$lib/components/Navbar.svelte'
-import '../index.css'
+  import Navbar from '$lib/components/Navbar.svelte'
+  import '../index.css'
 </script>
 
 <Navbar />

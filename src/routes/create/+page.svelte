@@ -1,5 +1,5 @@
 <script lang="ts">
-import NoteForm from '$lib/components/NoteForm.svelte'
+  import NoteForm from '$lib/components/NoteForm.svelte'
 </script>
 
 <div class="flex flex-col items-center gap-4">

@@ -1,6 +1,6 @@
 <script lang="ts">
-import { searchQuery } from '$lib/stores/notes'
-import TextInput from './TextInput.svelte'
+  import { searchQuery } from '$lib/stores/notes'
+  import TextInput from './TextInput.svelte'
 </script>
 
 <TextInput
