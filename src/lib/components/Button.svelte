@@ -10,7 +10,7 @@
   on:click
   {...$$restProps}
   class={twMerge(
-    'rounded px-2 py-0.5 font-semibold outline-none transition',
+    'rounded px-3 py-1 font-semibold outline-none transition',
     $$props.disabled
       ? 'cursor-not-allowed opacity-75'
       : 'hover:brightness-110 focus-visible:ring focus-visible:ring-surface-800 dark:focus-visible:ring-surface-200',
