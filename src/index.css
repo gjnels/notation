@@ -14,3 +14,7 @@ input:not([type='checkbox']):not([type='radio']):not([type='button']),
 textarea {
   @apply rounded border border-surface-400 bg-surface-50 p-2 outline-none transition focus-visible:border-primary-500 dark:border-surface-500 dark:bg-surface-800 dark:focus-visible:border-primary-400;
 }
+
+a:not(.unstyled) {
+  @apply underline underline-offset-1 outline-none transition-all hover:text-primary-500 hover:underline-offset-4;
+}
