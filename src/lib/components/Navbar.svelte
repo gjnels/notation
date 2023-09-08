@@ -13,8 +13,9 @@
   <div class="flex items-center gap-8">
     <Logo />
     {#if authenticated}
-      <nav>
+      <nav class="flex items-center gap-4">
         <Navlink href="/create">New Note</Navlink>
+        <Navlink href="/profile">My Profile</Navlink>
       </nav>
     {/if}
   </div>
