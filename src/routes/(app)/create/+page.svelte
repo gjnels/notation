@@ -4,5 +4,5 @@
 
 <div class="flex flex-col items-center gap-4">
   <h1 class="text-xl font-bold">Create New Note</h1>
-  <NoteForm classes="w-full" />
+  <NoteForm class="w-full" />
 </div>

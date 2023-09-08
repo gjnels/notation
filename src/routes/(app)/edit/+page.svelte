@@ -8,5 +8,5 @@
 
 <div class="flex flex-col items-center gap-4">
   <h1 class="text-xl font-bold">Edit Note</h1>
-  <NoteForm {title} {body} {id} classes="w-full" />
+  <NoteForm {title} {body} {id} class="w-full" />
 </div>
