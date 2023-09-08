@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-surface-100 text-surface-900 dark:bg-surface-900 dark:text-surface-50;
-}
-
 html {
   color-scheme: light dark;
+}
+
+body {
+  @apply bg-surface-100 text-surface-900 dark:bg-surface-900 dark:text-surface-50;
 }
 
 input:not([type='checkbox']):not([type='radio']):not([type='button']),
