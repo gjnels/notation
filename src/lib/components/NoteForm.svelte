@@ -2,8 +2,6 @@
   import { twMerge } from 'tailwind-merge'
   import { goto } from '$app/navigation'
   import { notes } from '$lib/stores/notes'
-  import TextInput from './TextInput.svelte'
-  import TextArea from './TextArea.svelte'
 
   export let classes = ''
 
@@ -42,8 +40,11 @@
   on:submit|preventDefault={handleSubmit}
   class={twMerge('flex max-w-xl flex-col gap-4', classes)}
 >
-  <TextInput placeholder="Title" bind:value={title} {error} />
-  <TextArea rows={5} placeholder="Body" bind:value={body} />
+  <input type="text" placeholder="Title" bind:value={title} />
+  {#if error}
+    <span class="text-rose-500">{error}</span>
+  {/if}
+  <textarea rows={5} placeholder="Body" bind:value={body} />
   <button
     type="submit"
     class="rounded bg-primary-400 px-3 py-1.5 font-semibold outline-none transition hover:brightness-110 dark:bg-primary-500"
